@@ -19,6 +19,8 @@ while getopts "ntp" option; do
     esac
 done
 
+docker pull mmerian/postfix
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 docker build $DIR -t ${IMAGE_NAME}:latest $BUILD_OPTIONS
 
